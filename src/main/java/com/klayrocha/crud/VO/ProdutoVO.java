@@ -3,6 +3,7 @@ package com.klayrocha.crud.VO;
 import java.io.Serializable;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -20,9 +21,9 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @JsonPropertyOrder({"id","nome","estoque","preco"})
-public class ProdutoVO implements Serializable{
+public class ProdutoVO extends RepresentationModel<ProdutoVO> implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
